@@ -34,10 +34,12 @@ public class LinkedStack<T> implements StackInterface<T>
 
         /** sets the data in the new node
             @param newData gets data from note and sets it in data */
+        /*
         private void setData(T newData)
         {
             data = newData;
         }//end setData
+        */
 
         /** finds the next node In the bag */
         private Node getNextNode()
@@ -77,14 +79,14 @@ public class LinkedStack<T> implements StackInterface<T>
         topNode = null;
     }
 
-    //checks to see that operations are in the stack
-    private static boolean checkOperator(char op)
+    /*//checks to see that operations are in the stack
+    public boolean checkOperator(char op)
     {
         return op== '+' || op== '-' || op== '*' || op== '/' || op=='^' || op== '(' || op== ')';
     }
     
     //checks and decides the order of operations
-    private static int compOperator(char op1)
+    public int compOperator(char op1)
     {
         switch (op1)
         {
@@ -107,13 +109,13 @@ public class LinkedStack<T> implements StackInterface<T>
     }
     
     //checks to see if values are valid
-    private static boolean isOperand(char l) 
+    public boolean isOperand(char l) 
     {
         return (l >= 'a' && l <= 'z') || (l >= 'A' && l <= 'Z');
     }
     
     //turns infix entry into postfix
-    public static String convertToPostfix(String infix) {
+    public String convertToPostfix(String infix) {
         Stack<Character> stack = new Stack<Character>();
         StringBuffer postfix = new StringBuffer(infix.length());
         char c;
@@ -149,5 +151,6 @@ public class LinkedStack<T> implements StackInterface<T>
         }
         return postfix.toString();
     }
+    */
     
 }
