@@ -1,9 +1,0 @@
-BagInterface.java
-
-and one of the following pairings:
-
-LinkedBag1.java
-LinkedBagDemo1.java
-
-LinkedBag.java
-LinkedBagDemo.java

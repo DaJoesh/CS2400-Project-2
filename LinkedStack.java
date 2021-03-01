@@ -81,7 +81,7 @@ public class LinkedStack<T> implements StackInterface<T>
     {
         LinkedStack<String> operatorStack = new LinkedStack<String>();
         LinkedStack<String> valueStack = new LinkedStack<String>();
-        String nextCharacter;
+        String nextCharacter = "";
         while(!inputStack.isEmpty())
         {
             nextCharacter = (String) inputStack.peek();
@@ -91,4 +91,5 @@ public class LinkedStack<T> implements StackInterface<T>
             }
         }
     }
+    
 }
