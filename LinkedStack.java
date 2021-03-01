@@ -79,12 +79,12 @@ public class LinkedStack<T> implements StackInterface<T>
 
     public void convertToPostfix(LinkedStack<T> inputStack)
     {
-        LinkedStack<T> operatorStack = new LinkedStack<T>();
-        LinkedStack<T> valueStack = new LinkedStack<T>();
-        T nextCharacter;
+        LinkedStack<String> operatorStack = new LinkedStack<String>();
+        LinkedStack<String> valueStack = new LinkedStack<String>();
+        String nextCharacter;
         while(!inputStack.isEmpty())
         {
-            nextCharacter = inputStack.peek();
+            nextCharacter = (String) inputStack.peek();
             switch(nextCharacter)
             {
 
