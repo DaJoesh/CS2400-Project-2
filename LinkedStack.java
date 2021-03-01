@@ -77,19 +77,77 @@ public class LinkedStack<T> implements StackInterface<T>
         topNode = null;
     }
 
-    public void convertToPostfix(LinkedStack<T> inputStack)
+    //checks to see that operations are in the stack
+    private static boolean checkOperator(char op)
     {
-        LinkedStack<String> operatorStack = new LinkedStack<String>();
-        LinkedStack<String> valueStack = new LinkedStack<String>();
-        String nextCharacter = "";
-        while(!inputStack.isEmpty())
+        return op== '+' || op== '-' || op== '*' || op== '/' || op=='^' || op== '(' || op== ')';
+    }
+    
+    //checks and decides the order of operations
+    private static int compOperator(char op1)
+    {
+        switch (op1)
         {
-            nextCharacter = (String) inputStack.peek();
-            switch(nextCharacter)
-            {
+            case '+':
+                return 1;
+            
+            case '-':
+                return 1;
+                
+            case '*':
+                return 2;
+                
+            case '/':
+                return 2;
+                
+            case '^':
+                return 3;
+        }
+        return -1;
+    }
+    
+    //checks to see if values are valid
+    private static boolean isOperand(char l) 
+    {
+        return (l >= 'a' && l <= 'z') || (l >= 'A' && l <= 'Z');
+    }
+    
+    //turns infix entry into postfix
+    public static String convertToPostfix(String infix) {
+        Stack<Character> stack = new Stack<Character>();
+        StringBuffer postfix = new StringBuffer(infix.length());
+        char c;
 
+        for (int i = 0; i < infix.length(); i++) {
+            c = infix.charAt(i);
+            if (isOperand(c)) 
+                postfix.append(c);
+            else if (c == '(') 
+                stack.push(c);
+            
+            else if (c == ')') 
+            {
+                while (!stack.isEmpty() && stack.peek() != '(') {
+                    postfix.append(stack.pop());
+                }
+                if (!stack.isEmpty() && stack.peek() != '(')
+                    return null;
+                else if(!stack.isEmpty())
+                    stack.pop();
+            }
+            else if (checkOperator(c))
+            {
+                if (!stack.isEmpty() && compOperator(c) <= compOperator(stack.peek())) 
+                    postfix.append(stack.pop());
+                stack.push(c);
             }
         }
+
+        while (!stack.isEmpty()) 
+        {
+            postfix.append(stack.pop());
+        }
+        return postfix.toString();
     }
     
 }
