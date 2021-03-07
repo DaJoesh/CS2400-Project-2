@@ -19,8 +19,10 @@ public class ArrayStackTest
         String infixString = "a*b/(c-a)+d*e";
         String postfixString = "";
         postfixString = convertToPostfix(infixString);
+        char evaluatedPostfix = evaluatePostfix(postfixString);
         System.out.println("Infix: " + printOut(infix));
         System.out.println("Postfix: " + postfixString);
+        System.out.println("Postfix Evaluated: " + evaluatedPostfix);
     }
 
     public static String printOut(ResizeableArrayStack<String> x)
@@ -114,12 +116,67 @@ public class ArrayStackTest
         return postfix.toString();
     }
 
-    public static String evaluatePostfix(String input)
+    public static char evaluatePostfix(String input)
     {
         String postfix = convertToPostfix(input);
-        
-        
-        
-        return null;
+        char nextCharacter;
+        ResizeableArrayStack<Character> valueStack = new ResizeableArrayStack<Character>();
+        char operandTwo,operandOne;
+        int result, a=2, b =4, c=3, d=5, e=6;
+        for(int i = 0; i<postfix.length();i++)
+        {
+            nextCharacter = postfix.charAt(i);
+            switch (nextCharacter)
+            {
+                case '+':
+                operandTwo = valueStack.pop();
+                operandOne = valueStack.pop();
+                result = operandOne+operandTwo;
+                valueStack.push((char)result);
+                break;
+
+                case'-':
+                operandTwo = valueStack.pop();
+                operandOne = valueStack.pop();
+                result = operandTwo-operandOne;
+                valueStack.push((char)result);
+                break;
+
+                case'*':
+                operandTwo = valueStack.pop();
+                operandOne = valueStack.pop();
+                result = operandOne*operandTwo;
+                valueStack.push((char)result);
+                break;
+
+                case'/':
+                operandTwo = valueStack.pop();
+                operandOne = valueStack.pop();
+                result = operandOne/operandTwo;
+                valueStack.push((char)result);
+                break;
+
+                case'^':
+                operandTwo = valueStack.pop();
+                operandOne = valueStack.pop();
+                result = operandOne^operandTwo;
+                valueStack.push((char)result);
+                break;
+
+                default: if(nextCharacter=='a')
+                valueStack.push((char)a);
+                else if(nextCharacter == 'b')
+                valueStack.push((char)b);
+                else if(nextCharacter == 'c')
+                valueStack.push((char)c);
+                else if(nextCharacter == 'd')
+                valueStack.push((char)d);
+                else if(nextCharacter == 'e')
+                valueStack.push((char)e);
+                
+                break;
+            }
+        }
+        return valueStack.peek();
     }
 }
