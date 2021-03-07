@@ -117,9 +117,10 @@ public class ArrayStackTest
 
     public static char evaluatePostfix(String input)
     {
+        int size = 20;
         String postfix = convertToPostfix(input);
         char nextCharacter;
-        ResizeableArrayStack<Character> valueStack = new ResizeableArrayStack<Character>();
+        ResizeableArrayStack<Character> valueStack = new ResizeableArrayStack<Character>(size);
         char operandTwo,operandOne;
         int result, a=2, b =3, c=4, d=5, e=6;
         for(int i = 0; i<postfix.length();i++)
@@ -172,7 +173,6 @@ public class ArrayStackTest
                 valueStack.push((char)d);
                 else if(nextCharacter == 'e')
                 valueStack.push((char)e);
-                
                 break;
             }
         }
