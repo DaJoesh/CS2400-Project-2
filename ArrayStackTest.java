@@ -20,12 +20,12 @@ public class ArrayStackTest
         String postfixString = "";
         postfixString = convertToPostfix(infixString);
         char evaluatedPostfix = evaluatePostfix(postfixString);
-        System.out.println("Infix: " + printOut(infix));
+        System.out.println("Infix: " + printOutString(infix));
         System.out.println("Postfix: " + postfixString);
         System.out.println("Postfix Evaluated: " + evaluatedPostfix);
     }
 
-    public static String printOut(ResizeableArrayStack<String> x)
+    public static String printOutString(ResizeableArrayStack<String> x)
     {
         String f = "";
         int i = 0;
@@ -43,7 +43,6 @@ public class ArrayStackTest
         }
         return f;
     }
-
     private static boolean checkOperator(char op)
     {
         return op== '+' || op== '-' || op== '*' || op== '/' || op=='^' || op== '(' || op== ')';
