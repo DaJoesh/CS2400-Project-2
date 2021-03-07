@@ -122,7 +122,7 @@ public class ArrayStackTest
         char nextCharacter;
         ResizeableArrayStack<Character> valueStack = new ResizeableArrayStack<Character>();
         char operandTwo,operandOne;
-        int result, a=2, b =4, c=3, d=5, e=6;
+        int result, a=2, b =3, c=4, d=5, e=6;
         for(int i = 0; i<postfix.length();i++)
         {
             nextCharacter = postfix.charAt(i);
