@@ -24,8 +24,9 @@ public class LinkedStackTest
         System.out.println("Postfix: " + postfixString);
     }//end main
 
-    /* prints out the string 
-    @param LinkedStack */
+    /**prints out the string 
+    @param LinkedStack 
+    */
     public static String printOut(LinkedStack<String> x)
     {
         String f = "";
@@ -45,17 +46,19 @@ public class LinkedStackTest
         return f;
     }//end printOut
 
-    /* checks operators and redices which one goes first
+    /**checks operators and redices which one goes first
     @return the opperator
-    @param op the operator in the infix equation */
+    @param op the operator in the infix equation
+    */
     private static boolean checkOperator(char op)
     {
         return op== '+' || op== '-' || op== '*' || op== '/' || op=='^' || op== '(' || op== ')';
     }
     
-    /* checks operators and redices which one goes first
+    /** checks operators and redices which one goes first
     @return a value according to which opperator is found in the infix equation 
-    @param op1 the operator in the infix equation */
+    @param op1 the operator in the infix equation 
+    */
     private static int compOperator(char op1)
     {
         switch (op1)
