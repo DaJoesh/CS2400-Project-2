@@ -45,6 +45,7 @@ public class ResizeableArrayStack<T> implements StackInterface<T>
         ensureCapacity();
         stack[topIndex + 1] = newEntry;
         topIndex++;
+        System.out.println(newEntry + " <-- this is being pushed!");
     } // end push
 
     private void ensureCapacity()
@@ -87,6 +88,6 @@ public class ResizeableArrayStack<T> implements StackInterface<T>
 
     public void clear()
     {
-      topIndex = -1;
+        topIndex = -1;
     }
 }
