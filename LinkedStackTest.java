@@ -83,7 +83,7 @@ public class LinkedStackTest
     
     /**checks to see if the letters in the infix equation is valid
     @return letters in infifrix quation
-    @param char 1 
+    @param char1 
     */
     private static boolean isOperand(char l) 
     {
