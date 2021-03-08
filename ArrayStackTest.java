@@ -2,7 +2,7 @@ public class ArrayStackTest
 {    
     public static void main(String[] args)
     {
-        String evaluatedPostfix = "32-";
+        String evaluatedPostfix = "43*2-3*";
         int actualEvaluatedPostfix = evaluatePostfix(evaluatedPostfix);
         System.out.println("Postfix Evaluated: " + actualEvaluatedPostfix);
     }
@@ -88,7 +88,6 @@ public class ArrayStackTest
                 break;
             }
         }
-        System.out.println(printOut(valueStack));
         return valueStack.peek();
     }
 }
