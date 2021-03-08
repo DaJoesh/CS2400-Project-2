@@ -1,5 +1,6 @@
 public class LinkedStackTest
 {
+    /*entering all characters used in infix equation */
     public static void main(String[] args)
     {
         LinkedStack<String> infix = new LinkedStack<String>();
@@ -21,8 +22,10 @@ public class LinkedStackTest
         postfixString = convertToPostfix(infixString);
         System.out.println("Infix: " + printOut(infix));
         System.out.println("Postfix: " + postfixString);
-    }
+    }//end main
 
+    /* prints out the string 
+    @param LinkedStack */
     public static String printOut(LinkedStack<String> x)
     {
         String f = "";
@@ -37,16 +40,22 @@ public class LinkedStackTest
             else
             {
                 f += x.pop();
-            }
-        }
+            }//end if
+        }//end while
         return f;
-    }
+    }//end printOut
+
+    /* checks operators and redices which one goes first
+    @return the opperator
+    @param op the operator in the infix equation */
     private static boolean checkOperator(char op)
     {
         return op== '+' || op== '-' || op== '*' || op== '/' || op=='^' || op== '(' || op== ')';
     }
     
-    //checks and decides the order of operations
+    /* checks operators and redices which one goes first
+    @return a value according to which opperator is found in the infix equation 
+    @param op1 the operator in the infix equation */
     private static int compOperator(char op1)
     {
         switch (op1)
@@ -69,12 +78,17 @@ public class LinkedStackTest
         return -1;
     }
     
-    //checks to see if values are valid
+    /* checks to see if the letters in the infix equation is valid
+    @return letters in infifrix quation
+    @param char 1 */
     private static boolean isOperand(char l) 
     {
         return (l >= 'a' && l <= 'z') || (l >= 'A' && l <= 'Z');
     }
 
+    /* converts infix equation to postfix
+    @return postfix equation
+    @param infix */
     public static String convertToPostfix(String infix) {
         LinkedStack<Character> stack = new LinkedStack<Character>();
         StringBuffer postfix = new StringBuffer(infix.length());
@@ -102,14 +116,14 @@ public class LinkedStackTest
                 if (!stack.isEmpty() && compOperator(c) <= compOperator(stack.peek())) 
                     postfix.append(stack.pop());
                 stack.push(c);
-            }
-        }
+            }//end if
+        }//end for
 
         while (!stack.isEmpty()) 
         {
             postfix.append(stack.pop());
-        }
+        }//end while
         return postfix.toString();
-    }
+    }//end convertToPostfix
     
-}
+}//end LinkedStackTest
