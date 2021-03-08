@@ -2,9 +2,9 @@ public class ArrayStackTest
 {    
     public static void main(String[] args)
     {
-        String evaluatedPostfix = "43*2-3*";
-        int actualEvaluatedPostfix = evaluatePostfix(evaluatedPostfix);
-        System.out.println("Postfix Evaluated: " + actualEvaluatedPostfix);
+        String postfix = "43*2-3*";
+        int evaluatedPostfix = evaluatePostfix(postfix);
+        System.out.println("Postfix Evaluated: " + evaluatedPostfix);
     }
 
     public static String printOut(ResizeableArrayStack<Integer> x)
