@@ -25,7 +25,11 @@ public class ArrayStackTest
         }
         return f;
     }
-
+    /**
+     * Evaluates a SINGLE DIGIT postfix expression that only contains numbers and operators.
+     * @param input a postfix expression in the form of a String to evaluate.
+     * @return integer value of the postfix equation.
+     */
     public static int evaluatePostfix(String input)
     {
         int size = 20;
