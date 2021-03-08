@@ -81,17 +81,19 @@ public class LinkedStackTest
         return -1;
     }
     
-    /* checks to see if the letters in the infix equation is valid
+    /**checks to see if the letters in the infix equation is valid
     @return letters in infifrix quation
-    @param char 1 */
+    @param char 1 
+    */
     private static boolean isOperand(char l) 
     {
         return (l >= 'a' && l <= 'z') || (l >= 'A' && l <= 'Z');
     }
 
-    /* converts infix equation to postfix
+    /**converts infix equation to postfix
     @return postfix equation
-    @param infix */
+    @param infix 
+    */
     public static String convertToPostfix(String infix) {
         LinkedStack<Character> stack = new LinkedStack<Character>();
         StringBuffer postfix = new StringBuffer(infix.length());
