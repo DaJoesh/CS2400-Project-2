@@ -6,25 +6,7 @@ public class ArrayStackTest
         int evaluatedPostfix = evaluatePostfix(postfix);
         System.out.println("Postfix Evaluated: " + evaluatedPostfix);
     }
-
-    public static String printOut(ResizeableArrayStack<Integer> x)
-    {
-        String f = "";
-        int i = 0;
-        while(!(x.isEmpty()))
-        {
-            i++;
-            if(i==0)
-            {
-                f += x.peek();
-            }
-            else
-            {
-                f += x.pop();
-            }
-        }
-        return f;
-    }
+    
     /**
      * Evaluates a SINGLE DIGIT postfix expression that only contains numbers and operators.
      * @param input a postfix expression in the form of a String to evaluate.
