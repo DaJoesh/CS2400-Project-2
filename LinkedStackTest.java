@@ -46,7 +46,7 @@ public class LinkedStackTest
         return f;
     }//end printOut
 
-    /**checks operators and redices which one goes first
+    /**checks operators and chekcs to see if they are valid
     @return the opperator
     @param op the operator in the infix equation
     */
@@ -55,7 +55,7 @@ public class LinkedStackTest
         return op== '+' || op== '-' || op== '*' || op== '/' || op=='^' || op== '(' || op== ')';
     }
     
-    /** checks operators and redices which one goes first
+    /** checks operators and decides which one goes first
     @return a value according to which opperator is found in the infix equation 
     @param op1 the operator in the infix equation 
     */
